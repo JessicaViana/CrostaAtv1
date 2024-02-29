@@ -1,0 +1,218 @@
+:root {
+
+    /* main colors */
+    --color-primary: #5D2FA0;
+    --color-secondary: #C6B5A5;
+    --color-on-secondary: #79697B;
+    --color-accent: #D897DC;
+    --main-bg-color: #2D2F46;
+    --white: #F1DEF3;
+
+    /* typography */
+    --font-primary: "Kanit", sans-serif;
+    --color-text: #F3E5E5;
+    --color-links: var(--white);
+
+    /* type scale */
+    --text-xss: 1.2rem;
+    --text-xs: 1.6rem;
+    --text-sm: 2.0rem;
+    --text-md: 2.4rem;
+    --text-lg: 4.0rem;
+    --text-xl: 5.7rem;
+
+}
+
+* {
+    font-size: 62.5%;
+    padding: 0;
+    margin: 0;
+    vertical-align: baseline;
+    list-style: none;
+    border: 0
+}
+
+
+body {
+    background-color: var(--color-primary);
+    font-size: var(--text-base-size);
+    font-family: var(--font-primary);
+    color: var(--color-text);
+}
+
+.space-1 {
+    padding: 0 6rem;
+
+}
+
+#navbar {
+    background: linear-gradient(90deg, rgba(235, 230, 243, 0.1) 0%, var(--color-primary) 50%, rgba(235, 230, 243, 0.1) 100%);
+    position: fixed;
+    transition: top 0.3s;
+    margin: 5rem auto;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 1.5em;
+    border-width: 0 0.2rem;
+    border-style: solid;
+    border-color: color-mod(var(--white) alpha(10%));
+    position: relative;
+    max-width: 55.5rem;
+}
+
+#navbar a {
+    color: var(--color-links);
+    text-align: center;
+    padding: 1rem;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: var(--text-xss);
+}
+
+#navbar img {
+    height: 80%;
+}
+
+a:hover {
+    color: var(--color-primary);
+    background-color: #ddd;
+}
+
+.logo--overlay {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 7.5rem;
+    height: 7.0rem;
+}
+
+
+header {
+    background: linear-gradient(var(--color-primary),
+            var(--main-bg-color));
+    display: flex;
+    height: 70vh;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+#heading {
+    display: flex;
+    flex-direction: column;
+    max-width: 50vw;
+}
+
+#heading__category {
+    justify-content: start;
+    font-weight: 600;
+    font-size: var(--text-xs);
+    padding: 0.5em 1em 1em 0.9em;
+    width: 8rem;
+    background-color: var(--color-accent);
+    border-radius: 0.9em;
+    color: var(--main-bg-color);
+    display: flex;
+
+}
+
+
+#heading__top {
+    align-items: center;
+    position: relative;
+    margin: 7rem 0 8.1rem 9rem;
+}
+
+.heading__title {
+    line-height: 1.1;
+    font-weight: 500;
+    font-size: var(--text-xl);
+
+
+}
+
+.icon--overlay {
+    position: absolute;
+    bottom: -10%;
+    left: 70%;
+    right: 0%;
+    height: 25rem;
+}
+
+#heading__bottom {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 4rem;
+}
+
+.tag {
+    display: flex;
+    align-items: center;
+    background-color: var(--color-secondary);
+    padding: 0 1.4rem;
+    height: 3rem;
+    border-radius: 2rem;
+    font-weight: 500;
+    font-size: var(--text-xss);
+    color: var(--color-on-secondary);
+}
+
+.heading__creator {
+    display: flex;
+    width: 22rem;
+}
+
+.heading__creator img {
+    height: 5.4rem;
+    box-sizing: border-box;
+    border: 0.3rem solid var(--color-secondary);
+    border-radius: 10rem;
+}
+
+.heading__creator__info {
+    margin-left: 1.6rem;
+}
+
+.heading__creator__info h6 {
+    font-weight: 300;
+    font-size: var(--text-xss);
+    color: var(--color-secondary);
+}
+
+.heading__creator__info h5 {
+    font-weight: 300;
+    font-size: var(--text-xs);
+    color: #DDD1D1;
+}
+
+.arrow__circle {
+    height: 10rem;
+    width: 10rem;
+    box-sizing: border-box;
+    border: 0.3rem solid #A39EB1;
+    /* padronizar token */
+    border-radius: 10rem;
+    position: absolute;
+    bottom: 5vh;
+    left: 46.55%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.arrow__icon {
+    width: 30px;
+    animation: animation-arrow 1s ease-in-out alternate infinite;
+}
+
+@keyframes animation-arrow {
+    to {
+        transform: translateY(1rem);
+    }
+
+}
