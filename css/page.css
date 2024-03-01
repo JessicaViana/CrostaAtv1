@@ -18,7 +18,7 @@
     --text-xs: 1.6rem;
     --text-sm: 2.0rem;
     --text-md: 2.4rem;
-    --text-lg: 4.0rem;
+    --text-lg: 2.5rem;
     --text-xl: 5.7rem;
 
 }
@@ -35,7 +35,6 @@
 
 body {
     background-color: var(--color-primary);
-    font-size: var(--text-base-size);
     font-family: var(--font-primary);
     color: var(--color-text);
 }
@@ -73,6 +72,7 @@ body {
     height: 80%;
 }
 
+/* TODO adicionar animação de hover */
 a:hover {
     color: var(--color-primary);
     background-color: #ddd;
@@ -193,7 +193,7 @@ header {
     height: 10rem;
     width: 10rem;
     box-sizing: border-box;
-    border: 0.3rem solid #A39EB1;
+    border: 0.2rem solid #A39EB1;
     /* padronizar token */
     border-radius: 10rem;
     position: absolute;
@@ -207,12 +207,96 @@ header {
 
 .arrow__icon {
     width: 30px;
-    animation: animation-arrow 1s ease-in-out alternate infinite;
+    animation: animation-bouncing 1s ease-in-out alternate infinite;
 }
 
-@keyframes animation-arrow {
+@keyframes animation-bouncing {
     to {
         transform: translateY(1rem);
     }
 
+}
+
+.content {
+    background-color: var(--main-bg-color);
+    padding: 8rem 16rem;
+    display: flex;
+
+}
+
+.content article {
+    font-weight: 300;
+    font-size: var(--text-sm);
+    color: #DDD1D1;
+    margin-right: 20rem;
+    width: 150rem;
+}
+
+.content aside {
+    font-weight: 300;
+    font-size: var(--text-xs);
+    color: #DDD1D1;
+    margin: 0 5rem;
+    position: sticky;
+    top: 5rem;
+    align-self: flex-start;
+}
+
+.bg--color {
+    padding-bottom: 1rem;
+    background-color: #2D2F46
+}
+
+.more-articles {
+    color: #DDD1D1;
+    padding: 5rem 0 12rem 22rem;
+    display: flex;
+    overflow: hidden;
+}
+
+.more-articles h4 {
+    font-size: var(--text-lg);
+    font-style: italic;
+    font-weight: 400;
+    line-height: 120%;
+    margin-right: 5rem;
+    width: 10rem;
+
+}
+
+/* TODO adicionar animação de hover */
+.card {
+    margin: 0 3rem;
+    min-width: 26rem;
+    border-radius: 1.4rem;
+    /* display: flex;
+    flex-direction: column; */
+    transition: 0.3s;
+}
+
+.card img {
+    border-radius: 1.4rem;
+    height: 15rem;
+    width: 100%;
+    object-fit: cover;
+}
+
+.card p {
+    font-size: var(--text-md);
+    font-weight: 300;
+    margin-right: 5rem;
+    width: 27rem;
+    margin: 0.6rem 0 0 0.2rem;
+}
+
+footer {
+    background-color: var(--color-primary);
+    border-radius: 5rem;
+    height: 25rem;
+    margin: 10rem 20rem;
+    display: flex;
+}
+
+footer img {
+    margin: 6.5rem 8rem;
 }
