@@ -29,7 +29,8 @@
     margin: 0;
     vertical-align: baseline;
     list-style: none;
-    border: 0
+    border: 0;
+    scroll-behavior: smooth;
 }
 
 
@@ -66,16 +67,38 @@ body {
     text-decoration: none;
     font-weight: 400;
     font-size: var(--text-xss);
+    border-bottom: 0.1rem solid transparent;
 }
 
 #navbar img {
     height: 80%;
 }
 
-/* TODO adicionar animação de hover */
+/* Animação de hover */
+
 a:hover {
-    color: var(--color-primary);
-    background-color: #ddd;
+    padding-bottom: 0.2rem;
+    border-bottom: 0.1rem solid transparent;
+    animation: 0.3s ease-in-out animation-hover-link forwards;
+    cursor: pointer;
+}
+
+.card:hover {
+    scale: 110%;
+    cursor: pointer;
+}
+
+.arrow:hover {
+    filter: invert(42%);
+    cursor: pointer;
+}
+
+
+@keyframes animation-hover-link {
+    to {
+        border-bottom: 0.1rem solid var(--color-links)
+    }
+
 }
 
 .logo--overlay {
@@ -194,7 +217,7 @@ header {
     width: 10rem;
     box-sizing: border-box;
     border: 0.2rem solid #A39EB1;
-    /* padronizar token */
+    /* TODO padronizar token */
     border-radius: 10rem;
     position: absolute;
     bottom: 5vh;
@@ -217,6 +240,7 @@ header {
 
 }
 
+
 .content {
     background-color: var(--main-bg-color);
     padding: 8rem 16rem;
@@ -225,26 +249,97 @@ header {
 }
 
 .content article {
-    font-weight: 300;
-    font-size: var(--text-sm);
-    color: #DDD1D1;
+
     margin-right: 20rem;
     width: 150rem;
 }
 
-.content aside {
+p,
+figcaption {
     font-weight: 300;
+    font-size: var(--text-sm);
+    color: #DDD1D1;
+    hyphens: manual;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+
+}
+
+h3 {
+    font-size: var(--text-lg);
+    font-weight: 400;
+    line-height: 120%;
+    margin: 5rem 0;
+
+}
+
+li {
+    font-size: var(--text-sm);
+    font-weight: 400;
+    line-height: 120%;
+    margin: 5rem 0;
+
+}
+
+blockquote {
+    border-left: var(--color-secondary) solid 0.3rem;
+    padding-left: 5rem;
+    margin: 4rem 0;
+    font-size: var(--text-md);
+}
+
+blockquote p {
+    font-size: var(--text-md);
+    line-height: 125%;
+}
+
+.content aside {
+    margin: 5rem;
+    position: sticky;
+    top: 8rem;
+    align-self: flex-start;
+    width: 27%;
+}
+
+.aside--link {
+    margin-bottom: 4rem;
+    font-weight: 300;
+    text-decoration: none;
     font-size: var(--text-xs);
     color: #DDD1D1;
-    margin: 0 5rem;
-    position: sticky;
-    top: 5rem;
-    align-self: flex-start;
+}
+
+:target {
+    scroll-margin-top: 5rem;
 }
 
 .bg--color {
     padding-bottom: 1rem;
     background-color: #2D2F46
+}
+
+.img__box {
+    display: flex;
+    font-size: var(--text-xs);
+    margin: 0 5rem;
+}
+
+.img__box img {
+    max-width: 45rem;
+    margin: 2rem;
+}
+
+.img__box p {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    color: #adadad;
+    font-weight: 350;
+    margin: 2rem;
+    max-width: 50rem;
 }
 
 .more-articles {
@@ -256,10 +351,10 @@ header {
 
 .more-articles h4 {
     font-size: var(--text-lg);
-    font-style: italic;
     font-weight: 400;
     line-height: 120%;
-    margin-right: 5rem;
+    font-style: italic;
+    margin: 0 5rem 2rem 0;
     width: 10rem;
 
 }
@@ -295,8 +390,50 @@ footer {
     height: 25rem;
     margin: 10rem 20rem;
     display: flex;
+    justify-content: space-between;
 }
 
-footer img {
+.footer__logo {
     margin: 6.5rem 8rem;
+}
+
+.footer__links {
+    display: flex;
+    align-items: center;
+}
+
+.footer__links__col {
+    display: flex;
+    flex-direction: column;
+    margin: 5rem;
+}
+
+footer a {
+    font-size: var(--text-xs);
+    font-weight: 200;
+    margin-top: 2rem;
+    text-decoration: none;
+    color: var(--color-links);
+}
+
+#element-1 {
+    position: absolute;
+    left: 90.8%;
+    transform: translate(-50%, -50%);
+    height: 40rem;
+    opacity: 80%;
+    mix-blend-mode: hard-light;
+}
+
+#element-2 {
+    position: absolute;
+    top: 40%;
+    height: 40rem;
+    mix-blend-mode: hard-light;
+    opacity: 40%;
+}
+
+#element-3 {
+    position: relative;
+    bottom: 4rem;
 }
